@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Composer.cs" />
+    <Compile Include="DataModel\BaseEntity.cs" />
     <Compile Include="DataModel\RequestRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
