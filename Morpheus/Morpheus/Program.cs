@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Composer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,13 @@ namespace Morpheus
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Instantiating the Composer");
+
+            ComposerEngine dbContext = new ComposerEngine();
+            string queryString = dbContext.RequestRecords.Sql;
+
+            Console.WriteLine("Composer Ready");
+            Console.ReadLine();
         }
     }
 }

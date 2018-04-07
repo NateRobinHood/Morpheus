@@ -52,13 +52,22 @@
     <Compile Include="Composer.cs" />
     <Compile Include="DataModel\BaseEntity.cs" />
     <Compile Include="DataModel\RequestRecord.cs" />
+    <Compile Include="Migrations\201804062259592_AddRequestRecords.cs" />
+    <Compile Include="Migrations\201804062259592_AddRequestRecords.Designer.cs">
+      <DependentUpon>201804062259592_AddRequestRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804062259592_AddRequestRecords.resx">
+      <DependentUpon>201804062259592_AddRequestRecords.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

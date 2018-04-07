@@ -11,8 +11,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Composer
 {
-    public class Composer : DbContext 
+    public class ComposerEngine : DbContext 
     {
+        //Connection string information goes into the StartUp Projects app.config
+
+        public ComposerEngine()
+            : base("name=TestingDatabase") //name= is very important, it makes entity framework look in app.config for a connection string
+        {
+
+        }
+
+        //DB Sets
+        public DbSet<RequestRecord> RequestRecords { get; set; }
+
         public override int SaveChanges()
         {
             AddTimestamps();
