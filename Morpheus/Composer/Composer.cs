@@ -13,7 +13,7 @@ namespace Composer
 {
     public class ComposerEngine : DbContext 
     {
-        //Connection string information goes into the StartUp Projects app.config
+        //Connection string information goes into the StartUp Project's(Morpheus) app.config
 
         public ComposerEngine()
             : base("name=TestingDatabase") //name= is very important, it makes entity framework look in app.config for a connection string
@@ -24,18 +24,7 @@ namespace Composer
         //DB Sets
         public DbSet<RequestRecord> RequestRecords { get; set; }
 
-        public override int SaveChanges()
-        {
-            AddTimestamps();
-            return base.SaveChanges();
-        }
-
-        public override async Task<int> SaveChangesAsync()
-        {
-            AddTimestamps();
-            return await base.SaveChangesAsync();
-        }
-
+        //Private Methods
         private void AddTimestamps()
         {
             var entities = ChangeTracker.Entries().Where(x => x.Entity is BaseEntity && (x.State == EntityState.Added || x.State == EntityState.Modified));
@@ -53,6 +42,19 @@ namespace Composer
                 ((BaseEntity)entity.Entity).DateModified = DateTime.UtcNow;
                 ((BaseEntity)entity.Entity).UserModified = currentUsername;
             }
+        }
+
+        //DbContext Overrides
+        public override int SaveChanges()
+        {
+            AddTimestamps();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync()
+        {
+            AddTimestamps();
+            return await base.SaveChangesAsync();
         }
     }
 }

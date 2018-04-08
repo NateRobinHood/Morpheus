@@ -11,6 +11,7 @@ namespace Morpheus
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Instantiating Morpheus Framework");
             Console.WriteLine("Instantiating the Composer");
 
             ComposerEngine dbContext = new ComposerEngine();
