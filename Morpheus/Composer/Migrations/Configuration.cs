@@ -12,6 +12,9 @@ namespace Composer.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<ComposerEngine>
     {
+        public static int MaxUrlLength = 2083;
+        public static int StandardStringLength = 50;
+
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
