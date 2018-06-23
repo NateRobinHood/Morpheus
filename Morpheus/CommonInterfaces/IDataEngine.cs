@@ -9,5 +9,10 @@ namespace CommonInterfaces
     public interface IDataEngine
     {
         event EventHandler<NewRequestRecordEventArgs> OnNewRequestRecord;
+
+        void StartEngine();
+        void StopEngine();
+
+        bool IsRunning { get; }
     }
 }

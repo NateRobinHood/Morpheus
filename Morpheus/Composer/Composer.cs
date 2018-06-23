@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Composer
 {
-    public class ComposerEngine : DbContext 
+    public class ComposerEngine : DbContext, IDataAccess
     {
         //Connection string information goes into the StartUp Project's(Morpheus) app.config
 
@@ -55,6 +55,11 @@ namespace Composer
         {
             AddTimestamps();
             return await base.SaveChangesAsync();
+        }
+
+        public void AddRequestRecord(RequestRecord requestRecord)
+        {
+            throw new NotImplementedException();
         }
     }
 }
