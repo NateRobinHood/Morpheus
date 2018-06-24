@@ -20,10 +20,10 @@ namespace DataEngineTests
             var dataAccessDummy = new Mock<IDataAccess>();
             var dataEngineMock = new Mock<IDataEngine>();
 
-            DataEngineManager dataEngineManager = new DataEngineManager(dataAccessDummy.Object);
-            dataEngineManager.AddEngine(dataEngineMock.Object);
+            DataEngineManager sut = new DataEngineManager(dataAccessDummy.Object);
+            sut.AddEngine(dataEngineMock.Object);
 
-            dataEngineManager.StartDataEngines();
+            sut.StartDataEngines();
 
             dataEngineMock.Verify(de => de.StartEngine());
         }
@@ -34,10 +34,10 @@ namespace DataEngineTests
             var dataAccessDummy = new Mock<IDataAccess>();
             var dataEngineMock = new Mock<IDataEngine>();
 
-            DataEngineManager dataEngineManager = new DataEngineManager(dataAccessDummy.Object);
-            dataEngineManager.AddEngine(dataEngineMock.Object);
+            DataEngineManager sut = new DataEngineManager(dataAccessDummy.Object);
+            sut.AddEngine(dataEngineMock.Object);
 
-            dataEngineManager.StopDataEngines();
+            sut.StopDataEngines();
 
             dataEngineMock.Verify(de => de.StopEngine());
         }
@@ -48,9 +48,9 @@ namespace DataEngineTests
             var dataAccessMock = new Mock<IDataAccess>();
             var dataEngineMock = new Mock<IDataEngine>();
 
-            DataEngineManager dataEngineManager = new DataEngineManager(dataAccessMock.Object);
+            DataEngineManager sut = new DataEngineManager(dataAccessMock.Object);
 
-            dataEngineManager.AddEngine(dataEngineMock.Object);
+            sut.AddEngine(dataEngineMock.Object);
 
             RequestRecord testRecord = new RequestRecord();
             dataEngineMock.Raise(de => de.OnNewRequestRecord += null, this, new NewRequestRecordEventArgs(testRecord));

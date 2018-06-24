@@ -22,7 +22,7 @@ namespace Composer
         }
 
         //DB Sets
-        public DbSet<RequestRecord> RequestRecords { get; set; }
+        public virtual DbSet<RequestRecord> RequestRecords { get; set; }
 
         //Private Methods
         private void AddTimestamps()
@@ -44,6 +44,13 @@ namespace Composer
             }
         }
 
+        private void AddTimestampsToEntity(BaseEntity entity)
+        {
+            entity.DateModified = DateTime.UtcNow;
+            entity.DateCreated = DateTime.UtcNow;
+            entity.UserModified = "Composer";
+        }
+
         //DbContext Overrides
         public override int SaveChanges()
         {
@@ -59,7 +66,7 @@ namespace Composer
 
         public void AddRequestRecord(RequestRecord requestRecord)
         {
-            throw new NotImplementedException();
+            AddTimestampsToEntity(RequestRecords.Add(requestRecord));
         }
     }
 }
