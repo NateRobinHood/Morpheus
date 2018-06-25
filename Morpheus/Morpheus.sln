@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonInterfaces", "CommonI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEngineTests", "DataEngineTests\DataEngineTests.csproj", "{9C53B632-C001-449A-83B2-34889DFC9998}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBooksEngineTests", "QuickBooksEngineTests\QuickBooksEngineTests.csproj", "{BB726F82-FB2B-4B95-8F90-E15D15D78501}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9C53B632-C001-449A-83B2-34889DFC9998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C53B632-C001-449A-83B2-34889DFC9998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C53B632-C001-449A-83B2-34889DFC9998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB726F82-FB2B-4B95-8F90-E15D15D78501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB726F82-FB2B-4B95-8F90-E15D15D78501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB726F82-FB2B-4B95-8F90-E15D15D78501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB726F82-FB2B-4B95-8F90-E15D15D78501}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
